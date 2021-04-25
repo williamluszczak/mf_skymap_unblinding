@@ -1,0 +1,12 @@
+executable = /data/user/wluszczak/multiflare_csky/gridmaps/extract_hotspots_mf_south.sh
+
+log = /scratch/wluszczak/muons/do_analysis.log
+output = /dev/null
+error = /home/wluszczak/hotspots.err
+initialdir = /home/wluszczak
+
+notification = Complete
+
+args = $(seednum)
+
+queue

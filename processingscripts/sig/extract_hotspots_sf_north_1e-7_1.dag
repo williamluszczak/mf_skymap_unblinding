@@ -1,0 +1,100 @@
+JOB 0 extract_hotspots_sf_north_sig.sub
+VARS 0 rho="1e-7" Nflaresrc="1" seednum="0"
+JOB 1 extract_hotspots_sf_north_sig.sub
+VARS 1 rho="1e-7" Nflaresrc="1" seednum="1"
+JOB 2 extract_hotspots_sf_north_sig.sub
+VARS 2 rho="1e-7" Nflaresrc="1" seednum="2"
+JOB 3 extract_hotspots_sf_north_sig.sub
+VARS 3 rho="1e-7" Nflaresrc="1" seednum="3"
+JOB 4 extract_hotspots_sf_north_sig.sub
+VARS 4 rho="1e-7" Nflaresrc="1" seednum="4"
+JOB 5 extract_hotspots_sf_north_sig.sub
+VARS 5 rho="1e-7" Nflaresrc="1" seednum="5"
+JOB 6 extract_hotspots_sf_north_sig.sub
+VARS 6 rho="1e-7" Nflaresrc="1" seednum="6"
+JOB 7 extract_hotspots_sf_north_sig.sub
+VARS 7 rho="1e-7" Nflaresrc="1" seednum="7"
+JOB 8 extract_hotspots_sf_north_sig.sub
+VARS 8 rho="1e-7" Nflaresrc="1" seednum="8"
+JOB 9 extract_hotspots_sf_north_sig.sub
+VARS 9 rho="1e-7" Nflaresrc="1" seednum="9"
+JOB 10 extract_hotspots_sf_north_sig.sub
+VARS 10 rho="1e-7" Nflaresrc="1" seednum="10"
+JOB 11 extract_hotspots_sf_north_sig.sub
+VARS 11 rho="1e-7" Nflaresrc="1" seednum="11"
+JOB 12 extract_hotspots_sf_north_sig.sub
+VARS 12 rho="1e-7" Nflaresrc="1" seednum="12"
+JOB 13 extract_hotspots_sf_north_sig.sub
+VARS 13 rho="1e-7" Nflaresrc="1" seednum="13"
+JOB 14 extract_hotspots_sf_north_sig.sub
+VARS 14 rho="1e-7" Nflaresrc="1" seednum="14"
+JOB 15 extract_hotspots_sf_north_sig.sub
+VARS 15 rho="1e-7" Nflaresrc="1" seednum="15"
+JOB 16 extract_hotspots_sf_north_sig.sub
+VARS 16 rho="1e-7" Nflaresrc="1" seednum="16"
+JOB 17 extract_hotspots_sf_north_sig.sub
+VARS 17 rho="1e-7" Nflaresrc="1" seednum="17"
+JOB 18 extract_hotspots_sf_north_sig.sub
+VARS 18 rho="1e-7" Nflaresrc="1" seednum="18"
+JOB 19 extract_hotspots_sf_north_sig.sub
+VARS 19 rho="1e-7" Nflaresrc="1" seednum="19"
+JOB 20 extract_hotspots_sf_north_sig.sub
+VARS 20 rho="1e-7" Nflaresrc="1" seednum="20"
+JOB 21 extract_hotspots_sf_north_sig.sub
+VARS 21 rho="1e-7" Nflaresrc="1" seednum="21"
+JOB 22 extract_hotspots_sf_north_sig.sub
+VARS 22 rho="1e-7" Nflaresrc="1" seednum="22"
+JOB 23 extract_hotspots_sf_north_sig.sub
+VARS 23 rho="1e-7" Nflaresrc="1" seednum="23"
+JOB 24 extract_hotspots_sf_north_sig.sub
+VARS 24 rho="1e-7" Nflaresrc="1" seednum="24"
+JOB 25 extract_hotspots_sf_north_sig.sub
+VARS 25 rho="1e-7" Nflaresrc="1" seednum="25"
+JOB 26 extract_hotspots_sf_north_sig.sub
+VARS 26 rho="1e-7" Nflaresrc="1" seednum="26"
+JOB 27 extract_hotspots_sf_north_sig.sub
+VARS 27 rho="1e-7" Nflaresrc="1" seednum="27"
+JOB 28 extract_hotspots_sf_north_sig.sub
+VARS 28 rho="1e-7" Nflaresrc="1" seednum="28"
+JOB 29 extract_hotspots_sf_north_sig.sub
+VARS 29 rho="1e-7" Nflaresrc="1" seednum="29"
+JOB 30 extract_hotspots_sf_north_sig.sub
+VARS 30 rho="1e-7" Nflaresrc="1" seednum="30"
+JOB 31 extract_hotspots_sf_north_sig.sub
+VARS 31 rho="1e-7" Nflaresrc="1" seednum="31"
+JOB 32 extract_hotspots_sf_north_sig.sub
+VARS 32 rho="1e-7" Nflaresrc="1" seednum="32"
+JOB 33 extract_hotspots_sf_north_sig.sub
+VARS 33 rho="1e-7" Nflaresrc="1" seednum="33"
+JOB 34 extract_hotspots_sf_north_sig.sub
+VARS 34 rho="1e-7" Nflaresrc="1" seednum="34"
+JOB 35 extract_hotspots_sf_north_sig.sub
+VARS 35 rho="1e-7" Nflaresrc="1" seednum="35"
+JOB 36 extract_hotspots_sf_north_sig.sub
+VARS 36 rho="1e-7" Nflaresrc="1" seednum="36"
+JOB 37 extract_hotspots_sf_north_sig.sub
+VARS 37 rho="1e-7" Nflaresrc="1" seednum="37"
+JOB 38 extract_hotspots_sf_north_sig.sub
+VARS 38 rho="1e-7" Nflaresrc="1" seednum="38"
+JOB 39 extract_hotspots_sf_north_sig.sub
+VARS 39 rho="1e-7" Nflaresrc="1" seednum="39"
+JOB 40 extract_hotspots_sf_north_sig.sub
+VARS 40 rho="1e-7" Nflaresrc="1" seednum="40"
+JOB 41 extract_hotspots_sf_north_sig.sub
+VARS 41 rho="1e-7" Nflaresrc="1" seednum="41"
+JOB 42 extract_hotspots_sf_north_sig.sub
+VARS 42 rho="1e-7" Nflaresrc="1" seednum="42"
+JOB 43 extract_hotspots_sf_north_sig.sub
+VARS 43 rho="1e-7" Nflaresrc="1" seednum="43"
+JOB 44 extract_hotspots_sf_north_sig.sub
+VARS 44 rho="1e-7" Nflaresrc="1" seednum="44"
+JOB 45 extract_hotspots_sf_north_sig.sub
+VARS 45 rho="1e-7" Nflaresrc="1" seednum="45"
+JOB 46 extract_hotspots_sf_north_sig.sub
+VARS 46 rho="1e-7" Nflaresrc="1" seednum="46"
+JOB 47 extract_hotspots_sf_north_sig.sub
+VARS 47 rho="1e-7" Nflaresrc="1" seednum="47"
+JOB 48 extract_hotspots_sf_north_sig.sub
+VARS 48 rho="1e-7" Nflaresrc="1" seednum="48"
+JOB 49 extract_hotspots_sf_north_sig.sub
+VARS 49 rho="1e-7" Nflaresrc="1" seednum="49"
