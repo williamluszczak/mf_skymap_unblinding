@@ -86,4 +86,18 @@ $(flaresize) is the average number of events in each flare that you're injecting
 $(deltaT) is the flare half-duration, in days. e.g. deltaT=10 will inject flares with tstop-tstart=20 days
 $(gamma) is the injected spectral index for the flares you will be injecting
 
+The output of this script is a list of the flare fits in the form of a numpy recarr. You can obtain the fitted per-flare parameters with:
+
+tstarts = flarecurve['tstart']
+tstops = flarecurve['tstop']
+ts = flarecurve['ts']
+gamma = flarecurve['gamma']
+ns = flarecurve['ns']
+
+The multiflare ts for a particular trial is simply:
+
+mf_ts = sum(flarecurve['ts'])
+
+Where "flarecurve" is the flare curve recarr associated with a particular trial.
+
 This script can be used to calculate a single source sensitivity, as well as inject/recover tests for ns and gamma. I have included appropriately sorted data files from running this script in the data_dir associated with this analysis (to be moved to /data/ana), which are then used in the Reproducible_Plots ipython notebook to make inj/recovery plots as well as a single-source sensitivity for NGC 1068(ra =-2.27e-4 rad, dec = 0.7096 rad).

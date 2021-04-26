@@ -51,7 +51,7 @@ mtr = cy.get_multiflare_trial_runner(ana=ana, src=full_srclist, muonflag=False, 
 cfits = []
 seedlist = []
 plist = []
-for k in range(0,2):
+for k in range(0,1):
     print(k)
     np.random.seed(seed=inputseed+k)
     seedlist.append(inputseed+k)
