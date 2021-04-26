@@ -30,17 +30,15 @@ def getpixels():
     return loc
 
 pixarr = getpixels()
-print(len(pixarr[pixarr['dec']<np.radians(-5.)]))
-sys.exit()
 
-#rho = str(sys.argv[1])
-#Nflaresrc = sys.argv[2]
 seednum = int(sys.argv[1])
+inputdir = str(sys.argv[2])
+#inputdir = '/data/user/wluszczak/multiflare_csky/gridmaps/%s/'%(seednum)
 
 inj_evts = []
 for decband in range(0,30):
     print(decband)
-    data = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/%s/bgmap_south_%s_%s.npz'%(seednum, seednum, decband), allow_pickle=True, encoding='bytes')
+    data = np.load(inputdir+'/bgmap_south_%s_%s.npz'%(seednum, decband), allow_pickle=True, encoding='bytes')
     tsdata = data['arr_0']
     flaredata = data['arr_1']
 
@@ -67,23 +65,15 @@ for decband in range(0,30):
         farrlist.append(farr)
     np.put(pixarr['flares'], whichpix, farrlist)
 
-#    inj_data = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/injmaps/d%s/%sflare/%s/inj_evts_south_%s_%s.npy'%(rho, Nflaresrc, seednum, seednum, decband), allow_pickle=True, encoding='bytes')
-#    if len(inj_data)>0:
-#        inj_evts.append(np.concatenate(inj_data))
-
-#inj_evts = np.concatenate(inj_evts)
-
-np.save('/data/user/wluszczak/multiflare_csky/gridmaps/%s/combinedmap_south_%s.npy'%(seednum, seednum), pixarr)
-#np.save('/data/user/wluszczak/multiflare_csky/gridmaps/injmaps/d%s/%sflare/%s/all_inj_evts_south_%s.npy'%(rho, Nflaresrc, seednum, seednum), inj_evts)
+np.save(inputdir+'/combinedmap_south_%s.npy'%(seednum), pixarr)
 
 fig, ax = plt.subplots (subplot_kw=dict (projection='aitoff'))
 sp = cy.plotting.SkyPlotter(pc_kw=dict(cmap='jet'))
-#mesh, cb = sp.plot_map(ax, pixarr['ts'].astype(float), n_ticks=2, pc_kw={'vmin':0., 'vmax':100.})
 mesh, cb = sp.plot_map(ax, pixarr['ts'].astype(float), n_ticks=2)
 kw = dict(color='.5', alpha=.5)
 sp.plot_gp(ax, lw=.5, **kw)
 sp.plot_gc(ax, **kw)
 ax.grid(**kw)
 cb.set_label(r'TS')
-plt.savefig('/data/user/wluszczak/multiflare_csky/gridmaps/%s/skymap_south_%s.png'%(seednum, seednum), dpi=500)
+plt.savefig(inputdir+'/skymap_south_%s.png'%(seednum), dpi=500)
 

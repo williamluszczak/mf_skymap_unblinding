@@ -26,26 +26,25 @@ def is_ind(pix1, pix2):
     else:
         return False
 
-
+out_dir = sys.argv[1]
 bg_files = glob.glob('/data/user/wluszczak/multiflare_csky/gridmaps/*/combinedmap_north_*.npy')
 
 sfts_dec = []
 mfts_dec = []
 for f in bg_files[0:400]:
-    if f != '/data/user/wluszczak/multiflare_csky/gridmaps/obs/combinedmap_north_obs.npy':
-        print(f)
-        bg_data = np.load(f, encoding='bytes', allow_pickle=True)
-        bg_data = bg_data[np.sin(bg_data['dec'])>minsindec]
-        bg_data = bg_data[np.sin(bg_data['dec'])<maxsindec]
-        print(bg_data['dec'], len(bg_data))
-        bg_pix = bg_data['ts']
-        mfts_dec.extend(bg_pix)
+    print(f)
+    bg_data = np.load(f, encoding='bytes', allow_pickle=True)
+    bg_data = bg_data[np.sin(bg_data['dec'])>minsindec]
+    bg_data = bg_data[np.sin(bg_data['dec'])<maxsindec]
+    print(bg_data['dec'], len(bg_data))
+    bg_pix = bg_data['ts']
+    mfts_dec.extend(bg_pix)
 
-        bg_flares = bg_data['flares'][bg_data['flares']!=None]
-        maxflare = 0.
-        for fcurve in bg_flares:
-            if len(fcurve)>0:
-                sfts_dec.append(fcurve['ts'][0])
+    bg_flares = bg_data['flares'][bg_data['flares']!=None]
+    maxflare = 0.
+    for fcurve in bg_flares:
+        if len(fcurve)>0:
+            sfts_dec.append(fcurve['ts'][0])
 
-np.save('/data/user/wluszczak/multiflare_csky/gridmaps/sindecbands/%s.npy'%(decband), sfts_dec)
-np.save('/data/user/wluszczak/multiflare_csky/gridmaps/sindecbands/mf_%s.npy'%(decband), mfts_dec)
+np.save(out_dir+'/%s.npy'%(decband), sfts_dec)
+np.save(out_dir+'/mf_%s.npy'%(decband), mfts_dec)

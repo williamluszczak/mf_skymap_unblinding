@@ -36,4 +36,13 @@ Once the skymap dagman has finished running (this may take a while), you should 
 
 combine_v3.py $(seednum) $(inputdir)
 
-Where $(seednum) refers to the seed associated with the particular map generated (if you assembled original dagman using the included script, this will just be 0), and $(inputdir) is where your .npz files from the grid jobs are located. 
+Where $(seednum) refers to the seed associated with the particular map generated (if you assembled original dagman using the included script, this will just be 0), and $(inputdir) is where your .npz files from the grid jobs are located.
+
+After this script has run, you can safely delete the original .npz files. 
+
+## Fitting Chi2 distributions for each dec band
+Note: I've saved the per-decbin TS arrays to $(data_dir). You can extract these files yourself using the provided extract_sindecband.py script, provided you have an ensemble of bg maps already simulated. Currently, this script will read files from my /data/user/.
+
+
+
+ 

@@ -36,4 +36,4 @@ fi
  
 echo Starting injmap.py
 python bgmap_south.py $1 $2 $3 $4 $5
-globus-url-copy data/bgmap_south_"$1"_"$2".npz gsiftp://gridftp.icecube.wisc.edu/$6
+globus-url-copy data/bgmap_south_"$1"_"$2".npz gsiftp://gridftp.icecube.wisc.edu/"$6"
