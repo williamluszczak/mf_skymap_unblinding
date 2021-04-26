@@ -89,9 +89,13 @@ $(gamma) is the injected spectral index for the flares you will be injecting
 The output of this script is a list of the flare fits in the form of a numpy recarr. You can obtain the fitted per-flare parameters with:
 
 tstarts = flarecurve['tstart']
+
 tstops = flarecurve['tstop']
+
 ts = flarecurve['ts']
+
 gamma = flarecurve['gamma']
+
 ns = flarecurve['ns']
 
 The multiflare ts for a particular trial is simply:
