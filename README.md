@@ -41,7 +41,13 @@ Where $(seednum) refers to the seed associated with the particular map generated
 After this script has run, you can safely delete the original .npz files. 
 
 ## Fitting Chi2 distributions for each dec band
-Note: I've saved the per-decbin TS arrays to $(data_dir). You can extract these files yourself using the provided extract_sindecband.py script, provided you have an ensemble of bg maps already simulated. Currently, this script will read files from my /data/user/.
+Note: I've saved the per-decbin TS arrays to $(data_dir). You can extract these files yourself using the provided extract_sindecband.py script, provided you have an ensemble of bg maps already simulated. Currently, this script will read existing skymap files from my /data/user/.
+
+Once the per-declination TS arrays are saved to file, you can preform chi2 fits using the code in the plots/Reproducible_Plots.ipynb ipython notebook, specifically in the cells labeled "Chi2 fits for declination bins". There are 4 sets of fits that need to be done, each corresponding to a single cell: nothern sky multiflare, northern sky single flare, southern sky multiflare, and southern sky single flare. Output plots showing the fits+residuals are written to the directory defined in the notebook.
+
+
+## Converting TS maps to p-value maps
+Once Chi2 fits have been verified, 
 
 
 
