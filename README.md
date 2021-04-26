@@ -5,6 +5,8 @@ This respository contains the scripts for reproducing plots related to the IceCu
 ## Requirements
 This repository should run with csky v1.1.1a (https://github.com/icecube/csky/releases/tag/v1.1.1a). 
 
+There are many pre-computed data files associated with the Reproducible_Plots ipython notebook that are currently stored in my /data/user/ at /data/user/wluszczak/mf_skymap_unblinding/data_dir/. This will be moved to /data/ana/, along with the full simulated skymap data (/data/user/wluszczak/multiflare_csky/gridmaps/) in the near future. 
+
 ## mapscripts
 These scripts are used for calculating individual multiflare skymaps (either with data, scrambled data, or injected signal). Also included are submission scripts for running on the grid
 
