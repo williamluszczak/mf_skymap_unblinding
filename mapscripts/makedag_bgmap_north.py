@@ -6,6 +6,7 @@ import os
 
 rho = sys.argv[1]
 Nflaresrc = sys.argv[2]
+output_dir = str(sys.argv[3])
 
 def decentry(inputseed, decband):
     decband = str(decband)
@@ -13,10 +14,10 @@ def decentry(inputseed, decband):
 #    Nflaresrc = str(1)
     deltaT = str(10.0)
     jobentry = """JOB {0} bgmap_north.sub
-VARS {0} inputseed=\"{1}\" dec=\"{2}\" rho=\"{3}\" Nflaresrc=\"{4}\" deltaT=\"{5}\"""".format((60*int(inputseed))+int(decband), inputseed, decband, rho, Nflaresrc, deltaT)
+VARS {0} inputseed=\"{1}\" dec=\"{2}\" rho=\"{3}\" Nflaresrc=\"{4}\" deltaT=\"{5}\" output_dir=\"{6}\"""".format((60*int(inputseed))+int(decband), inputseed, decband, rho, Nflaresrc, deltaT, output_dir)
     return jobentry
 
-for k in range(500,700):
+for k in range(0,1):
     inputseed = str(k)
     decs = range(0,60)
     for dec in decs:

@@ -11,7 +11,7 @@ output = /home/wluszczak/logfiles/gridjob.out
 error = /home/wluszczak/logfiles/gridjob_inj.err
 #log = /home/wluszczak/logfiles/job.log
 
-args = $(inputseed) $(dec) $(rho) $(Nflaresrc) $(deltaT)
+args = $(inputseed) $(dec) $(rho) $(Nflaresrc) $(deltaT) $(output_dir)
 
 #requirements
 transfer_executable = true

@@ -1,4 +1,4 @@
-executable = bgmap_north.sh
+executable = bgmap_south.sh
 
 request_memory = 8GB
 
@@ -8,7 +8,7 @@ notification = never
 +NATIVE_OS = True
 
 output = /home/wluszczak/logfiles/gridjob.out
-error = /home/wluszczak/logfiles/gridjob_inj.err
+error = /home/wluszczak/logfiles/gridjob_bg.err
 #log = /home/wluszczak/logfiles/job.log
 
 args = $(inputseed) $(dec) $(rho) $(Nflaresrc) $(deltaT) $(output_dir)
@@ -17,7 +17,7 @@ args = $(inputseed) $(dec) $(rho) $(Nflaresrc) $(deltaT) $(output_dir)
 transfer_executable = true
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = injmap_north.py,check_env.py
+transfer_input_files = bgmap_south.py,check_env.py
 transfer_output_files = ""
 #transfer_output_files = testdec.npz
 Requirements = HAS_CVMFS_icecube_opensciencegrid_org && (OpSysMajorVer =?= 7) && GLIDEIN_Site =!= "Cedar"
