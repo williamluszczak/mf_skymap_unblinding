@@ -42,7 +42,7 @@ _local_root = os.getenv('CSKY_DATA_ANALYSES_DIR', '/cvmfs/icecube.opensciencegri
 _username = os.getenv('CSKY_REMOTE_USER', '')
 repo = cy.selections.Repository(_local_root, '/cvmfs/icecube.opensciencegrid.org/users/wluszczak/analyses', username=_username)
 
-ana = cy.get_analysis(repo, 'version-003-p02', cy.selections.PSDataSpecs.ps_10yr, dir=ana_dir)
+ana = cy.get_analysis(repo, 'version-003-p02', cy.selections.PSDataSpecs.ps_10yr[0], dir=ana_dir)
 
 full_srclist = cy.utils.Sources(ra=src_ra, dec=src_dec, name=0)
 mtr = cy.get_multiflare_trial_runner(ana=ana, src=full_srclist, muonflag=False, flux=hyp.PowerLawFlux(gamma), mp_cpus=1, threshold=SoBcut, filter_srcs=True, max_dt=300.)
@@ -51,7 +51,7 @@ mtr = cy.get_multiflare_trial_runner(ana=ana, src=full_srclist, muonflag=False, 
 cfits = []
 seedlist = []
 plist = []
-for k in range(0,1):
+for k in range(0,2):
     print(k)
     np.random.seed(seed=inputseed+k)
     seedlist.append(inputseed+k)
@@ -73,5 +73,17 @@ for k in range(0,1):
     cfits.append(cfit)
     print(cfit.values()[0][-1])
 
-np.savez(outfile, cfits, seedlist)
+print("start conversion")
+farrs = []
+for r in cfits:
+    flist = r.values()[0][-1]
+    farr = np.empty(len(flist), dtype=[('tstart', float), ('tstop', float), ('ts', float), ('ns', float), ('gamma', float)])
+    farr['tstart'] = flist.mjd_start
+    farr['tstop'] = flist.mjd_end
+    farr['ts'] = flist.ts
+    farr['ns'] = flist.ns
+    farr['gamma'] = flist.gamma
+    farrs.append(farr)
+
+np.save(outfile, farrs)
 #np.savez('filtered_windows.npz', cfits)
