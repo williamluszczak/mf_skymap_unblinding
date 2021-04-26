@@ -1,4 +1,4 @@
-executable = injmap_north.sh
+executable = bgmap_north.sh
 
 request_memory = 8GB
 
