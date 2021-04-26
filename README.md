@@ -68,4 +68,20 @@ Which will take the map calculated from seed 0 and extract the set of local mult
 Once each map has an associated list of local hotspots, you can use this to conduct the hypothesis tests for the brightest multi/single flare spot, as well as population tests of the ensemble of local single/multi flare hotspots. The ipython notebook plots/Reproducible_Plots.ipynb shows background distributions assembled from the files located on my /data/user/ (to be moved to /data/ana/). 
 
 
- 
+## Single Source Tests
+Tests involving only a single source can be run using the included single_src.py script in the single_src directory. Usage is as follows:
+
+single_src.py $(inputseed) $(src_ra) $(src_dec) $(outfile) $(Nflare) $(flaresize) $(deltaT) $(gamma)
+
+Where:
+
+$(inputseed) is the seed you wish to run with
+$(src_ra) is the right ascension of your source candidate, in radians
+$(src_dec) is the declination of your source candidate, in radians
+$(outfile) is where you want this script to write the output
+$(Nflare) is the number of flares you wish to inject on this source. If you're running BG trials, set this to 0
+$(flaresize) is the average number of events in each flare that you're injecting. If you're running BG trials, set this to 0
+$(deltaT) is the flare half-duration, in days. e.g. deltaT=10 will inject flares with tstop-tstart=20 days
+$(gamma) is the injected spectral index for the flares you will be injecting
+
+This script can be used to calculate a single source sensitivity, as well as inject/recover tests for ns and gamma. I have included appropriately sorted data files from running this script in the data_dir associated with this analysis (to be moved to /data/ana), which are then used in the Reproducible_Plots ipython notebook to make inj/recovery plots as well as a single-source sensitivity for NGC 1068(ra =-2.27e-4 rad, dec = 0.7096 rad).
