@@ -35,12 +35,16 @@ sindecbands = []
 chi2fits = {}
 chi2fits_sf = {}
 
+input_map = sys.argv[1]
+output_dir = sys.argv[2]
+data_dir = '/data/user/wluszczak/mf_skymap_unblinding/data_dir/'
+
 for decband in range(0,20):
     mindec = np.arcsin(absmin+(((absmax-absmin)/20.)*decband))
     maxdec = np.arcsin(absmin+(((absmax-absmin)/20.)*(decband+1)))
     print(np.degrees(mindec), np.degrees(maxdec))
 
-    bg_ts = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/sindecbands/20bins/%s.npy'%(float(decband)))
+    bg_ts = np.load(data_dir+'/sindecbands/%s.npy'%(float(decband)))
     print(len(bg_ts))
     if decband == 10:
         fithist, fitbins = np.histogram(bg_ts, bins = np.linspace(0,30,60), density=True)
@@ -65,7 +69,7 @@ for decband in range(0,20):
     maxdec = np.arcsin(absmin+(((absmax-absmin)/20.)*(decband+1)))
     print(np.degrees(mindec), np.degrees(maxdec))
 
-    bg_ts = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/sindecbands/20bins/mf_%s.npy'%(float(decband)))
+    bg_ts = np.load(data_dir+'/sindecbands/mf_%s.npy'%(float(decband)))
     print(len(bg_ts))
     if decband == 10:
         fithist, fitbins = np.histogram(bg_ts, bins = np.linspace(0,60,120), density=True)
@@ -85,10 +89,11 @@ for decband in range(0,20):
     chi2fits[decband]=params
 
 ("finished chi2fits")
-for i in range(0, 500):
+for i in range(0, 1):
     print(i)
     try:
-        data = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/%s/combinedmap_north_%s.npy'%(i,i), allow_pickle=True)
+#        data = np.load('/data/user/wluszczak/multiflare_csky/gridmaps/%s/combinedmap_north_%s.npy'%(i,i), allow_pickle=True)
+        data = np.load(input_map, allow_pickle=True)
 
         pmap = getpixels()
         pmap['ra'] = data['ra']
@@ -119,4 +124,4 @@ for i in range(0, 500):
         pass
     print(pmap[np.argmax(pmap['ts'])])
 
-    np.save('/data/user/wluszczak/multiflare_csky/gridmaps/%s/pmap_north_%s.npy'%(i, i), pmap)
+    np.save(output_dir+'/pmap_north_%s.npy'%(i, i), pmap)
