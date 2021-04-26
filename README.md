@@ -47,8 +47,25 @@ Once the per-declination TS arrays are saved to file, you can preform chi2 fits 
 
 
 ## Converting TS maps to p-value maps
-Once Chi2 fits have been verified, 
+Once Chi2 fits have been verified, these fits can be used to convert the existing TS skymaps into p-value skymaps. This can be done with the pmap_north.py and pmap_south.py scripts:
 
+pmap_north.py $(input_map) $(output_dir)
+
+Where $(input_map) is the .npy file produced by combine_v3.py earlier, and $(output_dir) is where you want the output p-value map to be written.
+
+## Extracting local hotspots
+Once a p-value map is obtained, local hotspots (single or multi-flare) can be extracted with the extract_hotspots.py script:
+
+extract_hotspots.py $(inputmap) $(outputfile) $(ptype)
+
+Where $(inputmap) is the .npy file containing the full p-value map, $(outputfile) is where you want the output to be written, and $(ptype) is either "mf" or "sf", depending on whether you want to calculate the set of local multi-flare (mf) or single flare (sf) hotspots. Example usage would be:
+
+extract_hotspots.py /data/user/wluszczak/multiflare_csky/gridmaps/0/pmap_north_0.npy /data/user/wluszczak/multiflare_csky/gridmaps/0/all_mf_hotspots_0.npy mf
+
+Which will take the map calculated from seed 0 and extract the set of local multiflare hotspots, writing the output to the same directory. Note that this script can take a significant amount of time (~hours) to run. 
+
+## Hypothesis testing for hotspots/populations
+Once each map has an associated list of local hotspots, you can use this to conduct the hypothesis tests for the brightest multi/single flare spot, as well as population tests of the ensemble of local single/multi flare hotspots. The ipython notebook plots/Reproducible_Plots.ipynb shows background distributions assembled from the files located on my /data/user/ (to be moved to /data/ana/). 
 
 
  
